@@ -72,6 +72,9 @@ if isempty([centers1,radii1]) ~= 1
     h1 = viscircles(centers1,radii1, 'Color',[0 0 1], 'LineWidth', 5);
     plot(centers1(:,1), centers1(:,2), 'b.', 'MarkerSize', 5)
 end
+
+% Second detection for larger circles
+% Sensitivity in circle detection may need to be ajusted
 [centers2,radii2] = imfindcircles(Local_Maximum,[10 30], 'Sensitivity',0.75);
 if isempty([centers2,radii2]) ~= 1
     h1 = viscircles(centers2,radii2, 'Color',[1 0 0], 'LineWidth', 5);
